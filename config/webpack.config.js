@@ -109,6 +109,11 @@ module.exports = function(webpackEnv) {
               },
               stage: 3,
             }),
+            require('autoprefixer')(),
+            require('postcss-pxtorem')({
+              rootValue: 37.5,
+              propList: ['*']
+            }),
             // Adds PostCSS Normalize as the reset css with default options,
             // so that it honors browserslist config in package.json
             // which in turn let's users customize the target behavior as per their needs.
@@ -394,6 +399,7 @@ module.exports = function(webpackEnv) {
                       },
                     },
                   ],
+                  ['import', {libraryName: 'antd-mobile', style: 'css'}]
                 ],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/
