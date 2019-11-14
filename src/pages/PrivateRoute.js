@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 
-class HomePage extends Component {
+export default class PrivateRoute extends Component {
     render() {
         return (
             <div>
-                HomePage
+                private route
             </div>
         )
     }
 }
-
-export default HomePage

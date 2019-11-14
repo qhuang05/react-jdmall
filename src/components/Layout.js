@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import TabBar from './TabBar'
 
 class Layout extends Component {
     constructor(props){
@@ -9,6 +10,7 @@ class Layout extends Component {
         return (
             <div>
                 {children}
+                <TabBar />
             </div>
         )
     }

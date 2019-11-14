@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-class HomePage extends Component {
+class CategoryPage extends Component {
     render() {
         return (
             <div>
-                HomePage
+                CategoryPage
             </div>
         )
     }
 }
 
-export default HomePage
+export default CategoryPage

@@ -1,11 +1,11 @@
 import React from 'react';
-import { Button } from 'antd-mobile';
+import RouterPage from './pages/RouterPage';
 
 function App() {
 	return (
-		<div className="App">
-			<Button>Primary</Button>
-    	</div>
+		<>
+			<RouterPage />
+		</>
 	);
 }
 
