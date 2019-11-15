@@ -3,9 +3,6 @@ import { connect } from 'react-redux';
 import { Redirect, Route } from 'react-router-dom';
 
 class PrivateRoute extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         let { isLogin, path, component:Cmp, ...rest } = this.props;
         let userInfo = localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : null;

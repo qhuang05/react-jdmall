@@ -12,3 +12,9 @@ export const login = name => async (dispatch) => {
         payload: {username: ret.data}
     });
 }
+export const logout = value => {
+    return {
+        type: 'Logout',
+        payload: {}
+    }
+}

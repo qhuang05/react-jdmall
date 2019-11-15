@@ -5,7 +5,7 @@ import CategoryPage from './Category';
 import LoginPage from './Login';
 import ErrorPage from './404';
 import PrivateRoute from './PrivateRoute'
-import UserCenter from './UserCenter'
+import UserPage from './User'
 
 export default class RouterPage extends Component {
     render() {
@@ -16,7 +16,7 @@ export default class RouterPage extends Component {
                         <Route path="/" component={HomePage} exact />
                         <Route path="/category" component={CategoryPage} />
                         <Route path="/login" component={LoginPage} />
-                        <PrivateRoute path="/userCenter" component={UserCenter} />
+                        <PrivateRoute path="/user" component={UserPage} />
                         <Route component={ErrorPage} />
                     </Switch>
                 </BrowserRouter>

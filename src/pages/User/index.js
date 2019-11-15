@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import Layout from '../../components/Layout'
 
-class CategoryPage extends Component {
+class UserPage extends Component {
     render() {
         return (
             <Layout>
-                CategoryPage
+                UserPage
             </Layout>
         )
     }
 }
 
-export default CategoryPage
+export default UserPage
