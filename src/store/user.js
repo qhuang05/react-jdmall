@@ -3,12 +3,17 @@ const initial = {
     username: null
 }
 export const userReducer = (state=initial, action) => {
+    let _state;
     switch(action.type){
         case 'LoginSuccess':
-            return {isLogin:true, username: action.payload}
+            _state = {isLogin: true, username: action.payload};
+            localStorage.setItem('userInfo', JSON.stringify(_state));
+            return _state;
         case 'LoginFailure':
         case 'Logout':
-            return {isLogin:false, username: null}
+            _state = {isLogin:false, username: null};
+            localStorage.removeItem('userInfo');
+            return _state;
         default:
             return state;
     }
