@@ -6,7 +6,7 @@ export const userReducer = (state=initial, action) => {
     let _state;
     switch(action.type){
         case 'LoginSuccess':
-            _state = {isLogin: true, username: action.payload};
+            _state = {isLogin: true, username: action.payload.username};
             localStorage.setItem('userInfo', JSON.stringify(_state));
             return _state;
         case 'LoginFailure':

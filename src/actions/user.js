@@ -7,5 +7,8 @@ export const login = name => async (dispatch) => {
         data: {username: name}
     });
     console.log('login', ret);
-    dispatch({ type: 'LoginSuccess', username: ret.data});
+    dispatch({ 
+        type: 'LoginSuccess', 
+        payload: {username: ret.data}
+    });
 }

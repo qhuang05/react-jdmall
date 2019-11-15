@@ -8,7 +8,8 @@ class PrivateRoute extends Component {
     }
     render() {
         let { isLogin, path, component:Cmp, ...rest } = this.props;
-        if (isLogin) {
+        let userInfo = localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : null;
+        if (isLogin || (userInfo&&userInfo.isLogin)) {
             return (
                 // <Route path={path} component={Cmp} />
                 // <Route {...this.props} />
