@@ -7,6 +7,7 @@ import './index.css';
 import App from './App';
 import store from './store'
 import {Provider} from 'react-redux'
+import './icons' //使用svg图标
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
