@@ -26,6 +26,9 @@ input, textarea, select{
 	-webkit-appearance: none;
 	-webkit-user-modify: read-write-plaintext-only;
 }
+::-webkit-scrollbar{
+	display:none;
+}
 h1, h2, h3, h4, h5, h6{
 	font-size: inherit;
 	font-weight: inherit;
@@ -87,6 +90,23 @@ table {
 .flex-y-end{
 	-webkit-box-align: end;-webkit-align-items: flex-end;-ms-flex-align: end;align-items: flex-end;
 }
+.flex-wrap{
+	-ms-flex-wrap: wrap;flex-wrap: wrap;
+}
 .flex-1{
 	-webkit-box-flex: 1;-webkit-flex: 1;-ms-flex: 1;flex: 1;
+}
+.align-center{
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	        align-items: center;
+}
+.fl{float:left}
+.fr{float:right}
+
+.am-search{
+	background-color: transparent !important;
 }
