@@ -6,7 +6,7 @@ class Layout extends Component {
         super(props);
     }
     render () {
-        let {children, isShowTab=true} = this.props;
+        let {children, isShowTab=true, curTab} = this.props;
         let _children = [];
         if(children.$$typeof){ //不具名插槽
             _children.push(children);
@@ -16,7 +16,7 @@ class Layout extends Component {
         return (
             <>
                 {_children.map((item,index)=>(<Fragment key={item+index}>{item}</Fragment>))}
-                {isShowTab && <TabBar />}
+                {isShowTab && <TabBar curTab={curTab} />}
             </>
         )
     }

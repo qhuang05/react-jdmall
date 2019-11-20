@@ -6,9 +6,13 @@ import { TabBar } from 'antd-mobile'
 class JDTabBar extends Component {
     constructor(props){
         super(props);
+        let {curTab} = this.props;
         this.state = {
-            selectedTab: 'category'
+            selectedTab: curTab
         }
+    }
+    componentDidMount(){
+        console.log(this.props);
     }
     render(){
         return (
@@ -23,11 +27,11 @@ class JDTabBar extends Component {
                         key="index"
                         selected={this.state.selectedTab=='index'}
                         icon={
-                            // <Link to="/">
+                            <Link to="/">
                                 <div className="icon-center">
                                     <img className="nav-img" src="https://img11.360buyimg.com/jdphoto/s130x100_jfs/t1/81741/30/12345/4140/5d9c4b13E726f0a1e/82c582e7c375e4b3.png" />
                                 </div>
-                            // </Link>
+                            </Link>
                         }
                         selectedIcon={
                             <div className="icon-center">
@@ -40,18 +44,17 @@ class JDTabBar extends Component {
                             })
                         }}
                     >
-                        tab111
                     </TabBar.Item>
                     <TabBar.Item 
                         title=""
                         key="category"
                         selected={this.state.selectedTab=='category'}
                         icon={
-                            // <Link to="/category">
+                            <Link to="/category">
                                 <div className="icon-center">
                                     <img className="nav-img" src="https://img11.360buyimg.com/jdphoto/s130x100_jfs/t1/56507/6/12787/3168/5d9c4b12Ef363dd8d/4af32f42575509d8.png" />
                                 </div>
-                            // </Link>
+                            </Link>
                         }
                         selectedIcon={
                             <div className="icon-center">
@@ -64,18 +67,17 @@ class JDTabBar extends Component {
                             })
                         }}
                     >
-                        tab222
                     </TabBar.Item>
                     <TabBar.Item 
                         title=""
                         key="user"
                         selected={this.state.selectedTab=='user'}
                         icon={
-                            // <Link to="/user">
+                            <Link to="/user">
                                 <div className="icon-center">
                                     <img className="nav-img" src="https://img11.360buyimg.com/jdphoto/s130x100_jfs/t1/56206/13/12652/2957/5d9c4b13E503bcd76/1c8543653685e80e.png" />
                                 </div>
-                            // </Link>
+                            </Link>
                         }
                         selectedIcon={
                             <div className="icon-center">
@@ -88,7 +90,6 @@ class JDTabBar extends Component {
                             })
                         }}
                     >
-                        tab333
                     </TabBar.Item>
                 </TabBar>
             </div>

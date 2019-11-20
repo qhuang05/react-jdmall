@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Layout from '../../components/Layout'
 import './index.scss'
-import { WingBlank, Carousel, Icon } from 'antd-mobile'
+import { WingBlank, Carousel, Icon, Button } from 'antd-mobile'
 import SearchBar from '../../components/SearchBar'
 
 class HomePage extends Component {
@@ -97,33 +97,33 @@ class HomePage extends Component {
     }
     render() {
         return (
-            <Layout>
+            <Layout style={{paddingBottom: '60px'}} curTab="index">
                 <section className="slider-wrap">
                     <SearchBar />
-                    <WingBlank>
+                    <WingBlank>  
                         <Carousel
-                            autoplay={true}
-                            infinite
-                            dotActiveStyle={{background:'#f23030'}}
-                        >
-                            {this.state.bannerList.map(item => (
-                                <a
-                                    key={item}
-                                    href="#"
-                                    style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
-                                >
-                                    <img
-                                        src={item}
-                                        style={{ width: '100%', verticalAlign: 'top' }}
-                                        onLoad={() => {
-                                            // fire window resize event to change height
-                                            window.dispatchEvent(new Event('resize'));
-                                            this.setState({ imgHeight: 'auto' });
-                                        }}
-                                    />
-                                </a>
-                            ))}
-                        </Carousel>
+                                autoplay={true}
+                                infinite
+                                dotActiveStyle={{background:'#f23030'}}
+                            >
+                                {this.state.bannerList.map(item => (
+                                    <a
+                                        key={item}
+                                        href="#"
+                                        style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
+                                    >
+                                        <img
+                                            src={item}
+                                            style={{ width: '100%', verticalAlign: 'top' }}
+                                            onLoad={() => {
+                                                // fire window resize event to change height
+                                                window.dispatchEvent(new Event('resize'));
+                                                this.setState({ imgHeight: 'auto' });
+                                            }}
+                                        />
+                                    </a>
+                                ))}
+                            </Carousel>
                     </WingBlank>
                 </section>
                 <section className="menu-wrap">
@@ -139,9 +139,7 @@ class HomePage extends Component {
                         ))}
                     </Carousel>
                 </section>
-                <section style={{'marginTop': '10px'}}>
-                    <img src="//m.360buyimg.com/mobilecms/jfs/t1/102432/40/2489/97288/5dceac2cE62b5b966/64f2312fc0674fe6.gif" width="100%" />
-                </section>
+                <img src="//m.360buyimg.com/mobilecms/jfs/t1/102432/40/2489/97288/5dceac2cE62b5b966/64f2312fc0674fe6.gif" width="100%" />
                 <section className="sec-kill">
                     <WingBlank>
                         <div className="tit">
@@ -161,7 +159,23 @@ class HomePage extends Component {
                     </ul>
                     </div>
                 </section>
-                
+                <section className="recommend-wrap">
+                    <WingBlank>
+                        <h3 className="tit">
+                            <img src="//img11.360buyimg.com/jdphoto/jfs/t1/31601/22/15554/14040/5cc2a86fEbdb1098b/88174b36f85283b6.png" />
+                        </h3>
+                        <p>243434</p>
+                        <p>243434</p>
+                        <p>243434</p>
+                        <p>243434</p>
+                        <p>243434</p>
+                        <p>243434</p>
+                        <p>243434</p>
+                        <p>243434</p>
+                        <p>243434</p>
+                        <p>243434</p>
+                    </WingBlank>
+                </section>
             </Layout>
         )
     }

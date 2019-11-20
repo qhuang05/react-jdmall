@@ -58,3 +58,13 @@
 .text-del{
     text-decoration: line-through;
 }
+.recommend-wrap{
+    width:100%;
+    margin-top:10px;
+    .tit{
+        text-align:center;
+        img{
+            height: 35px;
+        }
+    }
+}
