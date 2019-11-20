@@ -97,7 +97,7 @@ class HomePage extends Component {
     }
     render() {
         return (
-            <Layout style={{paddingBottom: '60px'}} curTab="index">
+            <Layout style={{paddingBottom: '120px'}} curTab="index">
                 <section className="slider-wrap">
                     <SearchBar />
                     <WingBlank>  
@@ -160,20 +160,14 @@ class HomePage extends Component {
                     </div>
                 </section>
                 <section className="recommend-wrap">
+                    <h3 className="tit">
+                        <img src="//img11.360buyimg.com/jdphoto/jfs/t1/31601/22/15554/14040/5cc2a86fEbdb1098b/88174b36f85283b6.png" />
+                    </h3>
                     <WingBlank>
-                        <h3 className="tit">
-                            <img src="//img11.360buyimg.com/jdphoto/jfs/t1/31601/22/15554/14040/5cc2a86fEbdb1098b/88174b36f85283b6.png" />
-                        </h3>
-                        <p>243434</p>
-                        <p>243434</p>
-                        <p>243434</p>
-                        <p>243434</p>
-                        <p>243434</p>
-                        <p>243434</p>
-                        <p>243434</p>
-                        <p>243434</p>
-                        <p>243434</p>
-                        <p>243434</p>
+                        <div style={{background: '#fff'}}>
+                            <p>243434</p>
+                            
+                        </div>
                     </WingBlank>
                 </section>
             </Layout>

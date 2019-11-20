@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import {connect} from 'react-redux';
 import {login} from '../../actions/user';
-import Layout from '../../components/Layout';
 
 class LoginPage extends Component {
     constructor(props){
@@ -25,10 +24,10 @@ class LoginPage extends Component {
             )
         } else{
             return (
-                <Layout>
+                <>
                     <input type="text" value={username} onChange={e=>this.change('username', e.target.value)} />
                     <button onClick={e=>login(username)}>登录</button>
-                </Layout>
+                </>
             )
         }
     }

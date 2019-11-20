@@ -4,28 +4,40 @@ import './index.scss'
 import { TabBar } from 'antd-mobile'
 
 class JDTabBar extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        let {curTab} = this.props;
         this.state = {
-            selectedTab: curTab
+            selectedTab: 0
         }
     }
-    componentDidMount(){
-        console.log(this.props);
+    componentDidMount = () => {
+        let { pathname: path } = window.location;
+        if (path == '/') {
+            this.setState({ selectedTab: 0 })
+        } else if (path == '/category') {
+            this.setState({ selectedTab: 1 })
+        } else if (path = '/user') {
+            this.setState({ selectedTab: 2 })
+        }
     }
-    render(){
+    componentWillUnMount = () => {
+        this.setState = (state, callback)=>{
+            return;
+        }
+    }
+    render() {
         return (
             <div className="tab-bar">
                 <TabBar
                     unselectedTintColor="#949494"
                     tintColor="#33A3F4"
                     barTintColor="white"
+                    className="tab-bar"
                 >
                     <TabBar.Item
                         title=""
                         key="index"
-                        selected={this.state.selectedTab=='index'}
+                        selected={this.state.selectedTab == 0}
                         icon={
                             <Link to="/">
                                 <div className="icon-center">
@@ -36,19 +48,15 @@ class JDTabBar extends Component {
                         selectedIcon={
                             <div className="icon-center">
                                 <img className="nav-img" src="https://img11.360buyimg.com/jdphoto/s130x100_jfs/t1/67550/26/12426/5094/5d9c4b13Eea435a3f/81328b0609c60a3c.png" />
-                            </div> 
+                            </div>
                         }
-                        onPress={()=>{
-                            this.setState({
-                                selectedTab: 'index'
-                            })
-                        }}
+                        onPress={e => { this.setState({ selectedTab: 0 }) }}
                     >
                     </TabBar.Item>
-                    <TabBar.Item 
+                    <TabBar.Item
                         title=""
                         key="category"
-                        selected={this.state.selectedTab=='category'}
+                        selected={this.state.selectedTab == 1}
                         icon={
                             <Link to="/category">
                                 <div className="icon-center">
@@ -59,19 +67,15 @@ class JDTabBar extends Component {
                         selectedIcon={
                             <div className="icon-center">
                                 <img className="nav-img" src="https://img11.360buyimg.com/jdphoto/s130x100_jfs/t1/48787/24/12910/3390/5d9c4b12Ee63270e4/4481f5b3dbad979d.png" />
-                            </div> 
+                            </div>
                         }
-                        onPress={()=>{
-                            this.setState({
-                                selectedTab: 'category'
-                            })
-                        }}
+                        onPress={e => { this.setState({ selectedTab: 1 }) }}
                     >
                     </TabBar.Item>
-                    <TabBar.Item 
+                    <TabBar.Item
                         title=""
                         key="user"
-                        selected={this.state.selectedTab=='user'}
+                        selected={this.state.selectedTab == 2}
                         icon={
                             <Link to="/user">
                                 <div className="icon-center">
@@ -82,13 +86,9 @@ class JDTabBar extends Component {
                         selectedIcon={
                             <div className="icon-center">
                                 <img className="nav-img" src="https://img11.360buyimg.com/jdphoto/s130x100_jfs/t1/47480/36/12929/3209/5d9c4b13E97caa63a/4dc0ec8a7e47c2b7.png" />
-                            </div> 
+                            </div>
                         }
-                        onPress={()=>{
-                            this.setState({
-                                selectedTab: 'user'
-                            })
-                        }}
+                        onPress={e => { this.setState({ selectedTab: 2 }) }}
                     >
                     </TabBar.Item>
                 </TabBar>

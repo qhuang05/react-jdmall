@@ -1,23 +1,11 @@
-// #tab-bar.demo {
-//     display       : flex;
-//     flex-direction: column;
-// }
-
-// #tab-bar .demoName {
-//     height: 40px;
-// }
-
-// #tab-bar .demo-preview-item .am-tab-bar {
-//     background-color: white;
-// }
-
 .tab-bar{
     position: fixed;
     bottom:0;   
     width:100%;
+    background: red;
     .icon-center{
         img{
-            width: 70px;
+            height: 50px;
         }
     }
 }
