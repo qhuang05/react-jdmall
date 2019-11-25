@@ -14,6 +14,7 @@ class ProductListPage extends Component {
             dataSource,
             isLoading: true,
             refreshing: false,
+            hasMore: true,
             list: [],
             page: 1,
             pageSize: 20,
@@ -28,16 +29,18 @@ class ProductListPage extends Component {
         });
         let newData = res.data.data;
         let _list = this.state.refreshing ? [...newData] : [...this.state.list, ...newData];
+        let _hasMore = res.data.hasMore;
         this.setState({
             list: _list,
             dataSource: this.state.dataSource.cloneWithRows(_list),
             isLoading: false,
             refreshing: false,
+            hasMore: _hasMore
         });
     }
     // 上拉滚动
     onEndReached = (event) => {
-        if (this.state.isLoading && !this.state.hasMore) {
+        if(!this.state.hasMore || this.state.isLoading){
             return;
         }
         console.log('reach end', event);
@@ -90,7 +93,7 @@ class ProductListPage extends Component {
                     dataSource={this.state.dataSource}
                     renderFooter={() => (
                         <div style={{ padding: 30, textAlign: 'center' }}>
-                            {this.state.isLoading ? 'Loading...' : 'Loaded'}
+                            {this.state.isLoading ? 'Loading...' : `${this.state.hasMore ? '' : '没有更多了'}`}
                         </div>
                     )}
                     renderRow={renderRow}

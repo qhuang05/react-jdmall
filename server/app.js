@@ -62,7 +62,31 @@ app.post('/product/list', (req, res)=>{
         data: {
             data: list,
             page,
-            pageSize
+            pageSize,
+            hasMore: page>=3 ? false : true
+        }
+    })
+})
+
+app.post('/recommend/list', (req, res)=>{
+    const {page, pageSize} = req.body;
+    const list = [];
+    for(let i=0; i<pageSize; i++){
+        list.push({
+            id: Math.round(Math.random()*10000),
+            img: '//img10.360buyimg.com/mobilecms/s372x372_jfs/t1/63540/39/16051/223460/5ddb2fedE28b21738/c168d7b2f980d316.jpg!q70.dpg.webp',
+            name: '女巫和骑士 原创设计师女装品牌英伦风长袖毛衣女2019秋冬新款半高圆领拼色套头衫气质网红百搭款 蓝 M',
+            price: '89'
+        })
+    }
+    res.json({
+        status: 1000,
+        msg: '操作成功',
+        data: {
+            data: list,
+            page,
+            pageSize,
+            hasMore: page>=5 ? false : true
         }
     })
 })

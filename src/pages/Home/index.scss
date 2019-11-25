@@ -1,28 +1,33 @@
 .slider-wrap{
+    width:100%;
     background: #fff url(https://m.360buyimg.com/mobilecms/s1125x939_jfs/t1/68746/18/15003/50973/5dc93da2Ecfde27f6/f2eb01d76f958bf0.jpg) no-repeat center center;
     background-size:cover;
-    width:100%;
     overflow: hidden;
 }
 .menu-wrap{
+    width:100%;
     padding-top: 20px;
-}
-.menu-list{
-    .menu-item{
-        width: 20%;
-        text-align: center;
-        margin-bottom: 20px;
-        img{
-            width: 1rem;
-            height: auto;
+    .menu-list{
+        .menu-item{
+            width: 20%;
+            text-align: center;
+            margin-bottom: 20px;
+            img{
+                width: 1rem;
+                height: auto;
+            }
         }
     }
 }
 .sec-kill{
     width:100%;
-    background: #fff;
     margin-top: 10px;
-    padding-top:10px;
+    .wrap{
+        background: #fff;
+    }
+    .tit{
+        padding-top:10px
+    }
     .tit-img{
         display: inline-block;
         width: 68px;
@@ -31,7 +36,7 @@
         background-size:contain;
         .am-icon{
             margin-right: -10px !important;
-        }
+        }   
     }
     .list-wrap{
         width:100%;
@@ -40,7 +45,7 @@
     }
     li{
         display: block;
-        width: 80px;
+        width: 75px;
         padding: 0 .25rem; 
         flex-shrink: 0;
         flex-grow: 0;       
@@ -58,13 +63,55 @@
 .text-del{
     text-decoration: line-through;
 }
-.recommend-wrap{
+.recommend{
     width:100%;
     margin-top:10px;
     .tit{
+        background:#fff;
         text-align:center;
         img{
-            height: 35px;
+            width:100%;
         }
+    }
+    .recommend-item{
+        background: #fff;
+        width: calc((100% - 10px)/2);
+        width: -webkit-calc((100% - 10px)/2);
+        margin-bottom:10px;
+        padding-bottom:10px;
+        float: left;
+        &:nth-of-type(odd){
+            margin-right: 10px;
+        }
+        .img-wrap{
+            height: 176px;
+            text-align: center;
+            img{
+                max-width:100%;
+                max-height: 100%;
+                vertical-align: middle;
+            }
+        }
+        .info-wrap{
+            padding: 0 10px;
+        }
+        .name{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-overflow: -o-ellipsis-lastline;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        .price{
+            margin-top: 15px;
+        }
+        .opt{
+            display: inline-block;
+            height: 24px;
+            line-height: 25px;
+            padding: 0 10px;
+            border: 1px solid #686868;
+        }      
     }
 }
