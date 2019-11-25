@@ -204,26 +204,6 @@ class HomePage extends Component {
         )
     }
     render() {
-        const renderRow = (rowData, sectionID, rowID) => {
-            // console.log(rowData, sectionID, rowID);
-            const obj = this.state.list[rowID];
-			return (
-                <div className="recommend-item">
-                    <div className="img-wrap">
-                        <img src={obj.img} />
-                    </div>
-                    <div className="info-wrap">
-                        <div className="name">
-                            {obj.name}
-                        </div>
-                        <div className="price flex flex-x-full flex-y-center">
-                            <span className="red">￥{obj.price}</span>
-                            <a className="opt check-similar">看相似</a>
-                        </div>
-                    </div>
-                </div>
-			);
-		};
         return (
             <Layout style={{ paddingBottom: '120px' }} curTab="index">
                 <section className="slider-wrap">
