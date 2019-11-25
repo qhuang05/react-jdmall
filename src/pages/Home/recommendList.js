@@ -23,7 +23,7 @@ class ProductListPage extends Component {
 		this.setState({ isLoading: true });
 		let res = await Request({
 			method: 'post',
-			url: '/product/list',
+			url: '/recommend/list',
 			data: {page, pageSize}
 		});
 		let newData = res.data.data;
@@ -62,16 +62,20 @@ class ProductListPage extends Component {
             // console.log(rowData, sectionID, rowID);
             const obj = this.state.list[rowID];
 			return (
-				<div className="flex flex-y-center list-item" key={rowData.id}>
-					<div>
-						<img src={obj.img} style={{ 'height': '64px' }} />
-					</div>
-					<div>
-						<p>{rowID}</p>
-						<p className="id">id: {obj.id}</p>
-						<p className="title">title: {obj.title}</p>
-					</div>
-				</div>
+				<div className="recommend-item">
+                    <div className="img-wrap">
+                        <img src={obj.img} />
+                    </div>
+                    <div className="info-wrap">
+                        <div className="name">
+                            {obj.name}
+                        </div>
+                        <div className="price flex flex-x-full flex-y-center">
+                            <span className="red">￥{obj.price}</span>
+                            <a className="opt check-similar">看相似</a>
+                        </div>
+                    </div>
+                </div>
 			);
 		};
 		return (

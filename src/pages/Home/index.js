@@ -4,13 +4,11 @@ import './index.scss'
 import Request from '../../utils/request';
 import { WingBlank, Carousel, Icon, Button, ListView, PullToRefresh } from 'antd-mobile'
 import SearchBar from '../../components/SearchBar'
+import RecommendList from './recommendList'
 
 class HomePage extends Component {
     constructor(props) {
         super(props);
-        const dataSource = new ListView.DataSource({
-			rowHasChanged: (row1, row2) => row1.id !== row2.id
-        });
         this.state = {
             bannerList: [
                 '//m.360buyimg.com/mobilecms/s700x280_jfs/t1/81413/28/14227/125713/5dbbef9fE41000194/5781fd740f1cf619.jpg!cr_1125x445_0_171!q70.jpg.dpg',
@@ -125,12 +123,6 @@ class HomePage extends Component {
                     'origin': '59.8'
                 }
             ],
-            dataSource,
-			isLoading: true,
-			refreshing: false,
-			list: [],
-			page: 1,
-			pageSize: 20,
         }
     }
     renderBanner(){
@@ -211,42 +203,6 @@ class HomePage extends Component {
             </ul>
         )
     }
-    async getListData(page=1, pageSize=this.state.pageSize){
-		this.setState({ isLoading: true });
-		let res = await Request({
-			method: 'post',
-			url: '/recommend/list',
-			data: {page, pageSize}
-		});
-		let newData = res.data.data;
-        let _list = this.state.refreshing ? [...newData] : [...this.state.list, ...newData];
-		this.setState({
-			list: _list,
-			dataSource: this.state.dataSource.cloneWithRows(_list),
-			isLoading: false,
-			refreshing: false,
-        });
-    }
-    // 上拉滚动
-	onEndReached = (event) => {
-		if (this.state.isLoading && !this.state.hasMore) {
-			return;
-		}
-		console.log('reach end', event);
-		let {page} = this.state;
-		this.setState({
-			page: ++page
-		})
-		this.getListData(page);
-    }
-    // 下拉刷新
-	onRefresh = () => {
-		this.setState({ refreshing: true });
-		this.getListData();
-	}
-    componentDidMount() {
-		this.getListData();
-	}
     render() {
         const renderRow = (rowData, sectionID, rowID) => {
             // console.log(rowData, sectionID, rowID);
@@ -299,30 +255,7 @@ class HomePage extends Component {
                             <h3 className="tit">
                                 <img src="//img11.360buyimg.com/jdphoto/jfs/t1/31601/22/15554/14040/5cc2a86fEbdb1098b/88174b36f85283b6.png" />
                             </h3>
-                            <ListView
-                                ref={el => this.lv = el}
-                                dataSource={this.state.dataSource}
-                                renderFooter={() => (
-                                    <div style={{ padding: 30, textAlign: 'center' }}>
-                                        {this.state.isLoading ? 'Loading...' : 'Loaded'} 
-                                    </div>
-                                )}
-                                renderRow={renderRow}
-                                onEndReached={this.onEndReached}
-                                onEndReachedThreshold={10}
-                                pullToRefresh={
-                                    <PullToRefresh
-                                        refreshing={this.state.refreshing}
-                                        onRefresh={this.onRefresh}
-                                    />
-                                }
-                                onScroll={() => { console.log('scroll'); }}
-                                scrollRenderAheadDistance={500}
-                                initialListSize={20}
-                                pageSize={4}
-                                useBodyScroll
-                                className="product-list"
-                            />
+                            <RecommendList />
                         </div>
                     </WingBlank>
                 </section>
