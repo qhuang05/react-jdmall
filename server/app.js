@@ -46,6 +46,13 @@ app.get('/user/getRoles', (req, res)=>{
     })
 });
 
+app.post('/api/test', (req, res) => {
+    res.json({
+        status: 1000,
+        msg: '操作成功'
+    })
+})
+
 app.post('/product/list', (req, res)=>{
     const {page, pageSize} = req.body;
     const list = [];

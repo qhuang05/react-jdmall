@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import './index.scss'
-import Request from '../../utils/request';
+import Request from '@/utils/request';
 import { ListView, PullToRefresh } from 'antd-mobile';
+import './index.scss'
 
 class ProductListPage extends Component {
 	constructor(props) {
@@ -84,7 +84,7 @@ class ProductListPage extends Component {
 					ref={el => this.lv = el}
 					dataSource={this.state.dataSource}
 					renderFooter={() => (
-						<div style={{ padding: 30, textAlign: 'center' }}>
+						<div style={{textAlign: 'center', paddingBottom: '1.2rem'}}>
 							{this.state.isLoading ? 'Loading...' : `${this.state.hasMore ? '' : '没有更多了'}`} 
 						</div>
 					)}
@@ -97,9 +97,9 @@ class ProductListPage extends Component {
 							onRefresh={this.onRefresh}
 						/>
 					}
-					onScroll={() => { console.log('scroll'); }}
-                    scrollRenderAheadDistance={500}
-                    initialListSize={20}
+					// onScroll={() => { console.log('scroll'); }}
+                    scrollRenderAheadDistance={100}
+                    initialListSize={2}
 					pageSize={4}
                     useBodyScroll
                     className="product-list"

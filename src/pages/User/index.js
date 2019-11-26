@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import Layout from '../../components/Layout'
+import Layout from '../Layout'
 import {logout} from '../../actions/user'
 
 class UserPage extends Component {

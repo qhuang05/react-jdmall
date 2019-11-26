@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import 'lib-flexible';
 import 'antd-mobile';
 import 'antd-mobile/dist/antd-mobile.css';
-import './index.css';
+import './index.scss';
 import App from './App';
 import store from './store'
 import {Provider} from 'react-redux'

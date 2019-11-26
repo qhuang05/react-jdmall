@@ -6,6 +6,6 @@ import {homeReducer} from './home'
 
 const rootReducer = combineReducers({
     user: userReducer,
-    home: homeReducer
+    home: homeReducer,
 })
 export default createStore(rootReducer, applyMiddleware(thunk, logger));

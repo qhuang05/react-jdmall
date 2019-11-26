@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Layout from '../../components/Layout'
+import Layout from '../Layout'
 import SearchBar from '../../components/SearchBar'
 import { Tabs, WhiteSpace } from 'antd-mobile';
 

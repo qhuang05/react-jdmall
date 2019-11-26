@@ -1,6 +1,20 @@
 import React, { Component, Fragment } from 'react'
-import TabBar from './TabBar';
+import TabBar from '@/components/TabBar';
+import MenuBar from '@/components/MenuBar'
 
+const menu = [{
+    title: '首页',
+    icon: '',
+    path: '/'
+},{
+    title: '分类',
+    icon: '',
+    path: '/category'
+},{
+    title: '我的',
+    icon: '',
+    path: '/user'
+}]
 class Layout extends Component {
     constructor(props){
         super(props);
@@ -14,9 +28,10 @@ class Layout extends Component {
             _children = Object.values(children);
         }
         return (
-            <div style={{'paddingBottom': isShowTab ? '66px' : ''}}>
-                {_children.map((item,index)=>(<Fragment key={item+index}>{item}</Fragment>))}
+            <div>
+                {_children.map((item,i)=>(<Fragment key={item+i}>{item}</Fragment>))}
                 {isShowTab && <TabBar />}
+                {/* {isShowTab && <MenuBar menu={menu} />} */}
             </div>
         )
     }
