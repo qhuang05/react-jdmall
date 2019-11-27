@@ -1,0 +1,16 @@
+.test{
+    width: 100%;
+    height: 40px;
+    background: red;   
+    a{
+        background: blue;
+        padding: 10px;
+        display: inline-block;
+        &.active {
+            background: green;
+        }
+    }
+}
+.test.active{
+    background: green;
+}

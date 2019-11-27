@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Request from '@/utils/request';
 import { ListView, PullToRefresh } from 'antd-mobile';
 import './index.scss'
+import LazyLoad from 'react-lazyload'
+import { Transition } from 'react-transition-group'
 
 class ProductListPage extends Component {
 	constructor(props) {
@@ -64,7 +66,18 @@ class ProductListPage extends Component {
 			return (
 				<div className="recommend-item">
                     <div className="img-wrap">
-                        <img src={obj.img} />
+						<LazyLoad throttle={200} height={300}>
+							<Transition
+								timeout={0}
+								in={true}
+								enter={false}
+								exit={false} 
+								appear={true}
+								unmountOnExit={false}
+							>
+								{status=>(<img src={obj.img} className={`fade fade-${status}`} />)}
+							</Transition>
+						</LazyLoad>
                     </div>
                     <div className="info-wrap">
                         <div className="name">

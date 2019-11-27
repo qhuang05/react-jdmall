@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+const mockData = require('./data');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -81,7 +82,7 @@ app.post('/recommend/list', (req, res)=>{
     for(let i=0; i<pageSize; i++){
         list.push({
             id: Math.round(Math.random()*10000),
-            img: '//img10.360buyimg.com/mobilecms/s372x372_jfs/t1/63540/39/16051/223460/5ddb2fedE28b21738/c168d7b2f980d316.jpg!q70.dpg.webp',
+            img: mockData.images[i],
             name: '女巫和骑士 原创设计师女装品牌英伦风长袖毛衣女2019秋冬新款半高圆领拼色套头衫气质网红百搭款 蓝 M',
             price: '89'
         })

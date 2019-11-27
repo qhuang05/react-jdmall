@@ -6,6 +6,7 @@ import { WingBlank, Carousel, Icon } from 'antd-mobile'
 import SearchBar from '@/components/SearchBar'
 import RecommendList from './recommendList'
 import './index.scss'
+import LazyLoad from 'react-lazyload'
 
 class HomePage extends Component {
     constructor(props) {
@@ -29,15 +30,17 @@ class HomePage extends Component {
                             href="#"
                             style={{ display: 'inline-block', width: '100%', height: this.state.bannerHeight }}
                         >
-                            <img
-                                src={item}
-                                style={{ width: '100%', verticalAlign: 'top' }}
-                                onLoad={() => {
-                                    // fire window resize event to change height
-                                    window.dispatchEvent(new Event('resize'));
-                                    this.setState({ imgHeight: 'auto' });
-                                }}
-                            />
+                            <LazyLoad height="200">
+                                <img
+                                    src={item}
+                                    style={{ width: '100%', verticalAlign: 'top' }}
+                                    onLoad={() => {
+                                        // fire window resize event to change height
+                                        window.dispatchEvent(new Event('resize'));
+                                        this.setState({ imgHeight: 'auto' });
+                                    }}
+                                />
+                            </LazyLoad>
                         </a>
                     ))
                 }
@@ -51,7 +54,9 @@ class HomePage extends Component {
                 {
                     data.map((item, i) => (
                         <li key={'s-' + i} className="menu-item">
-                            <img src={item.icon} />
+                            <LazyLoad height="200">
+                                <img src={item.icon} />
+                            </LazyLoad>
                             <p>{item.name}</p>
                         </li>
                     ))
@@ -82,7 +87,9 @@ class HomePage extends Component {
                     return (
                         <li key={'s-' + i}>
                             <a>
-                                <img src={item.img} />
+                                <LazyLoad>
+                                    <img src={item.img} />
+                                </LazyLoad>
                                 <p className="red">{item.price}</p>
                                 <p className="text-del">{item.origin}</p>
                             </a>
@@ -109,7 +116,9 @@ class HomePage extends Component {
                 <section className="menu-wrap">
                     {this.renderMenu()}
                 </section>
-                <img src="//m.360buyimg.com/mobilecms/jfs/t1/102432/40/2489/97288/5dceac2cE62b5b966/64f2312fc0674fe6.gif" width="100%" />
+                <LazyLoad height="200">
+                    <img src="//m.360buyimg.com/mobilecms/jfs/t1/102432/40/2489/97288/5dceac2cE62b5b966/64f2312fc0674fe6.gif" width="100%" />
+                </LazyLoad>
                 <section className="sec-kill">
                     <WingBlank>
                         <div className="wrap">
@@ -127,7 +136,9 @@ class HomePage extends Component {
                     <WingBlank>
                         <div className="wrap">
                             <h3 className="tit">
-                                <img src="//img11.360buyimg.com/jdphoto/jfs/t1/31601/22/15554/14040/5cc2a86fEbdb1098b/88174b36f85283b6.png" />
+                                <LazyLoad height="200">
+                                    <img src="//img11.360buyimg.com/jdphoto/jfs/t1/31601/22/15554/14040/5cc2a86fEbdb1098b/88174b36f85283b6.png" />
+                                </LazyLoad>
                             </h3>
                             <RecommendList />
                         </div>
