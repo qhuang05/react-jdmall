@@ -1,0 +1,13 @@
+.tool-bar {
+    position: fixed;
+    z-index: 9999;
+    bottom: 100px;
+    right: 10px;
+    a{
+        padding: 6px;
+        display: inline-block;
+    }
+    .svg-class{
+        color: #efefef;
+    }
+}

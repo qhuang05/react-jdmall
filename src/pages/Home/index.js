@@ -118,7 +118,7 @@ class HomePage extends Component {
     }
     render() {
         return (
-            <Layout curTab="index">
+            <Layout curTab="index" isShowToolBar={true}>
                 <section className={styles['slider-wrap']}>
                     <SearchBar />
                     <WingBlank>

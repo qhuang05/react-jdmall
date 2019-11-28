@@ -6,7 +6,6 @@ $gray: #999;
 
 html, body{
 	width:100%;
-	overflow-x: hidden;
 }
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -155,10 +154,4 @@ table {
 }
 .gray{
     color: $gray;
-}
-
-// antd框架样式修改
-.am-search{
-	background-color: transparent !important;
-	font-size:12px;
 }

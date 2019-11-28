@@ -213,4 +213,34 @@ module.exports = {
             'price': 62.8
         },
     ],
+    categorys: [
+        {
+            id: 1,
+            title: '热门推荐',
+            subcg: [
+                {
+                    id: 10001,
+                    title: '热门分类',
+                    items: [
+                        { img: '//img14.360buyimg.com/focus/s140x140_jfs/t27136/183/1628977274/31007/a6f7ed55/5be6ebd8Nb07ef492.png', name: '手机' },
+                        { img: '//img30.360buyimg.com/focus/s140x140_jfs/t1/21233/40/7634/13890/5c6d039bE8a65d667/aef9581abcc85725.png', name: '耳机' },
+                        { img: '//img30.360buyimg.com/focus/s140x140_jfs/t1/1446/14/631/8500/5b9237e5E0d1f9e16/b1a627b92323b5ed.png', name: '华为' },
+                        { img: '//img11.360buyimg.com/focus/s140x140_jfs/t1/26217/19/7605/22816/5c6d03a3E4f263c9d/d6fc27b51078358c.png', name: '电磁炉' },
+                        { img: '//img14.360buyimg.com/focus/s140x140_jfs/t27400/283/1600620667/15106/a935e7bd/5be6f2e1Nfa8d9d6e.png', name: '路由器' },
+                    ]
+                },
+                {
+                    id: 10002,
+                    title: '家电热搜',
+                    items: [
+                        { img: '//img14.360buyimg.com/focus/s140x140_jfs/t27136/183/1628977274/31007/a6f7ed55/5be6ebd8Nb07ef492.png', name: '手机' },
+                        { img: '//img30.360buyimg.com/focus/s140x140_jfs/t1/21233/40/7634/13890/5c6d039bE8a65d667/aef9581abcc85725.png', name: '耳机' },
+                        { img: '//img30.360buyimg.com/focus/s140x140_jfs/t1/1446/14/631/8500/5b9237e5E0d1f9e16/b1a627b92323b5ed.png', name: '华为' },
+                        { img: '//img11.360buyimg.com/focus/s140x140_jfs/t1/26217/19/7605/22816/5c6d03a3E4f263c9d/d6fc27b51078358c.png', name: '电磁炉' },
+                        { img: '//img14.360buyimg.com/focus/s140x140_jfs/t27400/283/1600620667/15106/a935e7bd/5be6f2e1Nfa8d9d6e.png', name: '路由器' },
+                    ]
+                }
+            ]
+        }
+    ]
 }

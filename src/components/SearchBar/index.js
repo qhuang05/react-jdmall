@@ -25,9 +25,9 @@ export default class JDSearchBar extends Component {
     render() {
         let {keywords, curIndex} = this.state;
         return (
-            <>
+            <div className="search-bar">
                 <WingBlank>
-                    <div className={classnames('flex', 'flex-y-center', 'search-bar')}>
+                    <div className={classnames('flex', 'flex-y-center')}>
                         <div style={{'paddingRight': '10px'}}>
                             <SvgIcon iconClass="menu" size="18px" />
                         </div>
@@ -40,7 +40,7 @@ export default class JDSearchBar extends Component {
                         </div>
                     </div>
                 </WingBlank>
-            </>
+            </div>
         )
     }
 }

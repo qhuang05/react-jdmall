@@ -1,47 +1,59 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { getCategory } from '@/actions/category'
 import Layout from '@/pages/Layout'
 import SearchBar from '@/components/SearchBar'
 import { Tabs, WhiteSpace } from 'antd-mobile';
+import styles from './index.module.scss'
 
-const tabs = [
-	{ title: '1st Tab' },
-	{ title: '2nd Tab' },
-	{ title: '3rd Tab' },
-	{ title: '4th Tab' },
-	{ title: '5th Tab' },
-	{ title: '6th Tab' },
-	{ title: '7th Tab' },
-	{ title: '8th Tab' },
-	{ title: '9th Tab' },
-];
 class CategoryPage extends Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			page: 10,	//tab标签可视个数
+			tabItemHeight: 46,
+		}
+	}
+	renderContent = tab => (
+		<div style={{ backgroundColor: '#fff' }}>
+			<p>Content of {tab.title}</p>
+		</div>
+	)
+	componentDidMount() {
+		this.props.getCategory();
+		let contHeight = this.contElem.clientHeight;
+		let _page = Math.round(contHeight / this.state.tabItemHeight);
+		this.setState({ page: _page });
 	}
 	render() {
+		let { page } = this.state;
+		let { category } = this.props.category;
 		return (
 			<Layout>
-				<SearchBar />
-				<div style={{ height: 200 }}>
-					<Tabs tabs={tabs}
-						initialPage={'t2'}
-						tabBarPosition="left"
-						tabDirection="vertical"
-					>
-						<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '250px', backgroundColor: '#fff' }}>
-							Content of first tab
-						</div>
-						<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '250px', backgroundColor: '#fff' }}>
-							Content of second tab
-						</div>
-						<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '250px', backgroundColor: '#fff' }}>
-							Content of third tab
-						</div>
-					</Tabs>
+				{/* <SearchBar /> */}
+				<div style={{height: '90vh'}}>
+					<div ref={el => this.contElem = el}>
+						<Tabs
+							tabs={category}
+							tabBarPosition="left"
+							tabDirection="vertical"
+							renderTabBar={props => <Tabs.DefaultTabBar {...props} page={page} />}
+						>
+							{this.renderContent}
+						</Tabs>
+					</div>
 				</div>
 			</Layout>
 		)
 	}
 }
 
-export default CategoryPage
+export default connect(
+	state => (
+		{
+			user: state.user,
+			category: state.category
+		}
+	),
+	{ getCategory }
+)(CategoryPage)

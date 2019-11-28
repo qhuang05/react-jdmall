@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import BottomMenu from '@/components/BottomMenu'
+import ToolBar from '@/components/ToolBar';
 
 const menu = [{
     title: '首页',
@@ -19,7 +20,7 @@ class Layout extends Component {
         super(props);
     }
     render () {
-        let {children, isShowBottom=true} = this.props;
+        let {children, isShowBottom=true, isShowToolBar=false} = this.props;
         let _children = [];
         if(children.$$typeof){ 
             //不具名插槽
@@ -32,6 +33,7 @@ class Layout extends Component {
             <div>
                 {_children.map((item,i)=>(<Fragment key={item+i}>{item}</Fragment>))}
                 {isShowBottom && <BottomMenu />}
+                {isShowToolBar && <ToolBar />}
                 {/* {isShowBottom && <BottomMenu2 menu={menu} />} */}
             </div>
         )
