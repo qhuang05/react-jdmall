@@ -4,7 +4,7 @@ import HomePage from './Home';
 import CategoryPage from './Category';
 import ScrollListPage from './List';
 import LoginPage from './Login';
-import ErrorPage from './404';
+import ErrorPage from './Error';
 import PrivateRoute from './PrivateRoute'
 import UserPage from './User'
 
