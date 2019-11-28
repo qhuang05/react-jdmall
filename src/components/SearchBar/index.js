@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import styles from './index.module.scss';
 import classnames from 'classnames';
-import SvgIcon from '../SvgIcon';
+import SvgIcon from '@/components/SvgIcon';
 import { SearchBar, WingBlank } from 'antd-mobile';
+import './index.scss';
 
 export default class JDSearchBar extends Component {
     constructor(props){
@@ -27,7 +27,7 @@ export default class JDSearchBar extends Component {
         return (
             <>
                 <WingBlank>
-                    <div className={classnames('flex', 'flex-y-center', styles['search-bar'])}>
+                    <div className={classnames('flex', 'flex-y-center', 'search-bar')}>
                         <div style={{'paddingRight': '10px'}}>
                             <SvgIcon iconClass="menu" size="18px" />
                         </div>

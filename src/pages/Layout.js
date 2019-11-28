@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import TabBar from '@/components/TabBar';
 import MenuBar from '@/components/MenuBar'
+import BottomMenu from '@/components/BottomMenu'
 
 const menu = [{
     title: '首页',
@@ -20,18 +21,19 @@ class Layout extends Component {
         super(props);
     }
     render () {
-        let {children, isShowTab=true} = this.props;
+        let {children, isShowBottom=true} = this.props;
         let _children = [];
-        if(children.$$typeof){ //不具名插槽
+        if(children.$$typeof){ 
+            //不具名插槽
             _children.push(children);
-        } else{ //具名插槽
+        } else{ 
+            //具名插槽
             _children = Object.values(children);
         }
         return (
             <div>
                 {_children.map((item,i)=>(<Fragment key={item+i}>{item}</Fragment>))}
-                {isShowTab && <TabBar />}
-                {/* {isShowTab && <MenuBar menu={menu} />} */}
+                {isShowBottom && <BottomMenu />}
             </div>
         )
     }

@@ -135,6 +135,18 @@ table {
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
 }
+.fade{
+    opacity: 0.1; 
+    -webkit-transition: all 1.5s;	
+    -o-transition: all 1.5s;	
+    transition: all 1.5s;
+}
+.fade.fade-entered{
+    opacity: 1;
+    -webkit-transition: all 1.5s;	
+    -o-transition: all 1.5s;	
+    transition: all 1.5s;
+}
 .text-del{
 	text-decoration: line-through;
 }

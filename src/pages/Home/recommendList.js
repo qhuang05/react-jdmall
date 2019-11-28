@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import Request from '@/utils/request';
-import { ListView, PullToRefresh } from 'antd-mobile';
-import './index.scss'
 import LazyLoad from 'react-lazyload'
 import { Transition } from 'react-transition-group'
+import { ListView, PullToRefresh } from 'antd-mobile';
+// import './index.scss'
+import classnames from 'classnames'
+import styless from './index.module.scss'
 
 class ProductListPage extends Component {
 	constructor(props) {
@@ -25,7 +27,7 @@ class ProductListPage extends Component {
 		this.setState({ isLoading: true });
 		let res = await Request({
 			method: 'post',
-			url: '/recommend/list',
+			url: '/product/list?type=recommend',
 			data: {page, pageSize}
 		});
 		let newData = res.data.data;
@@ -64,8 +66,8 @@ class ProductListPage extends Component {
             // console.log(rowData, sectionID, rowID);
             const obj = this.state.list[rowID];
 			return (
-				<div className="recommend-item">
-                    <div className="img-wrap">
+				<div className={styless['recommend-item']}>
+                    <div className={styless['img-wrap']}>
 						<LazyLoad throttle={200} height={300}>
 							<Transition
 								timeout={0}
@@ -79,13 +81,13 @@ class ProductListPage extends Component {
 							</Transition>
 						</LazyLoad>
                     </div>
-                    <div className="info-wrap">
-                        <div className="name">
+                    <div className={styless['info-wrap']}>
+                        <div className={styless['name']}>
                             {obj.name}
                         </div>
-                        <div className="price flex flex-x-full flex-y-center">
+                        <div className={classnames('flex flex-x-full flex-y-center', styless['price'])}>
                             <span className="red">￥{obj.price}</span>
-                            <a className="opt check-similar">看相似</a>
+                            <a className={classnames(styless['opt'], 'check-similar')}>看相似</a>
                         </div>
                     </div>
                 </div>

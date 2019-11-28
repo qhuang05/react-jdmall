@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Layout from '@/pages/Layout'
 import { getBannerList, getMenuPanel, getSecondKills } from '@/actions/home'
-import { WingBlank, Carousel, Icon } from 'antd-mobile'
+import Layout from '@/pages/Layout'
 import SearchBar from '@/components/SearchBar'
+import { WingBlank, Carousel, Icon } from 'antd-mobile'
 import RecommendList from './recommendList'
-import './index.scss'
 import LazyLoad from 'react-lazyload'
+import { Transition } from 'react-transition-group'
+import classnames from 'classnames'
+import styless from './index.module.scss'
 
 class HomePage extends Component {
     constructor(props) {
@@ -50,10 +52,10 @@ class HomePage extends Component {
     renderMenu() {
         let { menuPanel } = this.props.home;
         const slideItem = data => (
-            <ul className="flex flex-x-full flex-wrap menu-list">
+            <ul className={classnames('flex flex-x-full flex-wrap', styless['menu-list'])}>
                 {
                     data.map((item, i) => (
-                        <li key={'s-' + i} className="menu-item">
+                        <li key={'s-' + i} className="menu-item" className={styless['menu-item']}>
                             <LazyLoad height="200">
                                 <img src={item.icon} />
                             </LazyLoad>
@@ -87,8 +89,18 @@ class HomePage extends Component {
                     return (
                         <li key={'s-' + i}>
                             <a>
-                                <LazyLoad>
-                                    <img src={item.img} />
+                                <LazyLoad throttle={200} height={200}>
+                                    {/* <img src={item.img} /> */}
+                                    <Transition
+                                        timeout={0}
+                                        in={true}
+                                        enter={false}
+                                        exit={false} 
+                                        appear={true}
+                                        unmountOnExit={false}
+                                    >
+                                        {status=>(<img src={item.img} className={`fade fade-${status}`} />)}
+                                    </Transition>
                                 </LazyLoad>
                                 <p className="red">{item.price}</p>
                                 <p className="text-del">{item.origin}</p>
@@ -107,35 +119,35 @@ class HomePage extends Component {
     render() {
         return (
             <Layout curTab="index">
-                <section className="slider-wrap">
+                <section className={styless['slider-wrap']}>
                     <SearchBar />
                     <WingBlank>
                         {this.renderBanner()}
                     </WingBlank>
                 </section>
-                <section className="menu-wrap">
+                <section className={styless['menu-wrap']}>
                     {this.renderMenu()}
                 </section>
                 <LazyLoad height="200">
                     <img src="//m.360buyimg.com/mobilecms/jfs/t1/102432/40/2489/97288/5dceac2cE62b5b966/64f2312fc0674fe6.gif" width="100%" />
                 </LazyLoad>
-                <section className="sec-kill">
+                <section className={styless['sec-kill']}>
                     <WingBlank>
-                        <div className="wrap">
-                            <div className="tit">
-                                <div className="tit-img"></div>
+                        <div className={styless['wrap']}>
+                            <div className={styless['tit']}>
+                                <div className={styless['tit-img']}></div>
                                 <a className="fr tc-y">更多秒杀<Icon type="right" /></a>
                             </div>
-                            <div className="list-wrap">
+                            <div className={styless['list-wrap']}>
                                 {this.renderSeconds()}
                             </div>
                         </div>
                     </WingBlank>
                 </section>
-                <section className="recommend">
+                <section className={styless['recommend']}>
                     <WingBlank>
-                        <div className="wrap">
-                            <h3 className="tit">
+                        <div className={styless['wrap']}>
+                            <h3 className={styless['tit']}>
                                 <LazyLoad height="200">
                                     <img src="//img11.360buyimg.com/jdphoto/jfs/t1/31601/22/15554/14040/5cc2a86fEbdb1098b/88174b36f85283b6.png" />
                                 </LazyLoad>

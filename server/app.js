@@ -47,44 +47,38 @@ app.get('/user/getRoles', (req, res)=>{
     })
 });
 
-app.post('/api/test', (req, res) => {
+// 其它通用测试接口数据
+app.get('/api/test', (req, res) => {
+    const { type } = req.query;
+    let data = '';
+    switch(type){
+        case 'banner':
+            data = mockData.banners;
+            break;
+        case 'menu':
+            data = mockData.menus;
+            break;
+        case 'seckill':
+            data = mockData.secondKills;
+            break;
+    }
     res.json({
         status: 1000,
-        msg: '操作成功'
+        msg: '操作成功',
+        data
     })
 })
 
+// 分页商品列表
 app.post('/product/list', (req, res)=>{
     const {page, pageSize} = req.body;
     const list = [];
     for(let i=0; i<pageSize; i++){
         list.push({
             id: Math.round(Math.random()*10000),
-            name: '名称：'+ (Math.random()*10000).toFixed(2),
-            img: 'https://zos.alipayobjects.com/rmsportal/dKbkpPXKfvZzWCM.png'
-        })
-    }
-    res.json({
-        status: 1000,
-        msg: '操作成功',
-        data: {
-            data: list,
-            page,
-            pageSize,
-            hasMore: page>=3 ? false : true
-        }
-    })
-})
-
-app.post('/recommend/list', (req, res)=>{
-    const {page, pageSize} = req.body;
-    const list = [];
-    for(let i=0; i<pageSize; i++){
-        list.push({
-            id: Math.round(Math.random()*10000),
-            img: mockData.images[i],
-            name: '女巫和骑士 原创设计师女装品牌英伦风长袖毛衣女2019秋冬新款半高圆领拼色套头衫气质网红百搭款 蓝 M',
-            price: '89'
+            img: mockData.products[i].image,
+            name: mockData.products[i].name,
+            price: mockData.products[i].price
         })
     }
     res.json({

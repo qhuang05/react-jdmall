@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './index.module.scss';
+import React from 'react'
+import PropTypes from 'prop-types'
+import './index.scss'
 
 const SvgIcon = props => {
     const { iconClass, fill, size } = props;
     return (
         <>
             <i aria-hidden="true">
-                <svg className={styles['svg-class']} style={{'fontSize': size}}>
+                <svg className="svg-class" style={{'fontSize': size}}>
                     <use xlinkHref={"#icon-" + iconClass} fill={fill} />
                 </svg>
             </i>
