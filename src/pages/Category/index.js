@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Layout from '../Layout'
 import SearchBar from '../../components/SearchBar'
 import { Tabs, WhiteSpace } from 'antd-mobile';
-import Test from '@/components/Test'
 
 const tabs = [
 	{ title: '1st Tab' },
@@ -22,8 +21,7 @@ class CategoryPage extends Component {
 	render() {
 		return (
 			<Layout>
-				<Test />
-				{/* <SearchBar />
+				<SearchBar />
 				<div style={{ height: 200 }}>
 					<Tabs tabs={tabs}
 						initialPage={'t2'}
@@ -40,7 +38,7 @@ class CategoryPage extends Component {
 							Content of third tab
 						</div>
 					</Tabs>
-				</div> */}
+				</div>
 			</Layout>
 		)
 	}
