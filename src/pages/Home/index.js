@@ -8,7 +8,7 @@ import RecommendList from './recommendList'
 import LazyLoad from 'react-lazyload'
 import { Transition } from 'react-transition-group'
 import classnames from 'classnames'
-import styless from './index.module.scss'
+import styles from './index.module.scss'
 
 class HomePage extends Component {
     constructor(props) {
@@ -52,10 +52,10 @@ class HomePage extends Component {
     renderMenu() {
         let { menuPanel } = this.props.home;
         const slideItem = data => (
-            <ul className={classnames('flex flex-x-full flex-wrap', styless['menu-list'])}>
+            <ul className={classnames('flex flex-x-full flex-wrap', styles['menu-list'])}>
                 {
                     data.map((item, i) => (
-                        <li key={'s-' + i} className="menu-item" className={styless['menu-item']}>
+                        <li key={'s-' + i} className="menu-item" className={styles['menu-item']}>
                             <LazyLoad height="200">
                                 <img src={item.icon} />
                             </LazyLoad>
@@ -119,35 +119,35 @@ class HomePage extends Component {
     render() {
         return (
             <Layout curTab="index">
-                <section className={styless['slider-wrap']}>
+                <section className={styles['slider-wrap']}>
                     <SearchBar />
                     <WingBlank>
                         {this.renderBanner()}
                     </WingBlank>
                 </section>
-                <section className={styless['menu-wrap']}>
+                <section className={styles['menu-wrap']}>
                     {this.renderMenu()}
                 </section>
                 <LazyLoad height="200">
                     <img src="//m.360buyimg.com/mobilecms/jfs/t1/102432/40/2489/97288/5dceac2cE62b5b966/64f2312fc0674fe6.gif" width="100%" />
                 </LazyLoad>
-                <section className={styless['sec-kill']}>
+                <section className={styles['sec-kill']}>
                     <WingBlank>
-                        <div className={styless['wrap']}>
-                            <div className={styless['tit']}>
-                                <div className={styless['tit-img']}></div>
+                        <div className={styles['wrap']}>
+                            <div className={styles['tit']}>
+                                <div className={styles['tit-img']}></div>
                                 <a className="fr tc-y">更多秒杀<Icon type="right" /></a>
                             </div>
-                            <div className={styless['list-wrap']}>
+                            <div className={styles['list-wrap']}>
                                 {this.renderSeconds()}
                             </div>
                         </div>
                     </WingBlank>
                 </section>
-                <section className={styless['recommend']}>
+                <section className={styles['recommend']}>
                     <WingBlank>
-                        <div className={styless['wrap']}>
-                            <h3 className={styless['tit']}>
+                        <div className={styles['wrap']}>
+                            <h3 className={styles['tit']}>
                                 <LazyLoad height="200">
                                     <img src="//img11.360buyimg.com/jdphoto/jfs/t1/31601/22/15554/14040/5cc2a86fEbdb1098b/88174b36f85283b6.png" />
                                 </LazyLoad>

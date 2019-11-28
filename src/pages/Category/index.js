@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Layout from '../Layout'
-import SearchBar from '../../components/SearchBar'
+import Layout from '@/pages/Layout'
+import SearchBar from '@/components/SearchBar'
 import { Tabs, WhiteSpace } from 'antd-mobile';
 
 const tabs = [
