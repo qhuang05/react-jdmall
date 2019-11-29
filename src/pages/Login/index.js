@@ -1,32 +1,39 @@
-import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
-import {connect} from 'react-redux';
-import {login} from '../../actions/user';
+import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { login } from '../../actions/user'
+import { NavBar, Icon } from 'antd-mobile'
 
 class LoginPage extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             username: ''
         }
     }
-    change = (key, value)=>{
+    change = (key, value) => {
         this.setState({
             [key]: value
         })
     }
     render() {
-        let {user, login, location} = this.props;
-        let {username} = this.state;
-        if(user.isLogin){
+        let { user, login, location } = this.props;
+        let { username } = this.state;
+        if (user.isLogin) {
             return (
                 <Redirect to={location.state || '/userCenter'} />
             )
-        } else{
+        } else {
             return (
                 <>
-                    <input type="text" value={username} onChange={e=>this.change('username', e.target.value)} />
-                    <button onClick={e=>login(username)}>登录</button>
+                    <NavBar
+                        mode="light"
+                        icon={<Icon type="left" />}
+                        onLeftClick={() => window.history.back()}
+                    >京东登录注册
+                    </NavBar>
+                    <input type="text" value={username} onChange={e => this.change('username', e.target.value)} />
+                    <button onClick={e => login(username)}>登录</button>
                 </>
             )
         }
@@ -39,5 +46,5 @@ export default connect(
         user: state.user
     }),
     // mapDispatchToProps
-    {login}
+    { login }
 )(LoginPage)
