@@ -10,4 +10,4 @@ const rootReducer = combineReducers({
     home: homeReducer,
     category: categoryReducer
 })
-export default createStore(rootReducer, applyMiddleware(thunk, logger));
+export default createStore(rootReducer, applyMiddleware(thunk));

@@ -5,12 +5,8 @@ export const getCategory = () => async dispatch =>{
         method: 'get',
         url: '/api/test?type=category',
     });
-    let _data = [];
-    for(let i=0; i<30; i++){
-        _data.push(resData.data[0]);
-    }
     dispatch({
         type: 'GetCategory',
-        payload: _data
+        payload: resData.data
     })
 }

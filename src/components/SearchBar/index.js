@@ -25,7 +25,7 @@ export default class JDSearchBar extends Component {
     render() {
         let {keywords, curIndex} = this.state;
         return (
-            <div className="search-bar">
+            <div className="search-bar" flag={this.props.flag}>
                 <WingBlank>
                     <div className={classnames('flex', 'flex-y-center')}>
                         <div style={{'paddingRight': '10px'}}>

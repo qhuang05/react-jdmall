@@ -219,28 +219,234 @@ module.exports = {
             title: '热门推荐',
             subcg: [
                 {
-                    id: 10001,
+                    id: 100001,
                     title: '热门分类',
                     items: [
                         { img: '//img14.360buyimg.com/focus/s140x140_jfs/t27136/183/1628977274/31007/a6f7ed55/5be6ebd8Nb07ef492.png', name: '手机' },
                         { img: '//img30.360buyimg.com/focus/s140x140_jfs/t1/21233/40/7634/13890/5c6d039bE8a65d667/aef9581abcc85725.png', name: '耳机' },
                         { img: '//img30.360buyimg.com/focus/s140x140_jfs/t1/1446/14/631/8500/5b9237e5E0d1f9e16/b1a627b92323b5ed.png', name: '华为' },
                         { img: '//img11.360buyimg.com/focus/s140x140_jfs/t1/26217/19/7605/22816/5c6d03a3E4f263c9d/d6fc27b51078358c.png', name: '电磁炉' },
-                        { img: '//img14.360buyimg.com/focus/s140x140_jfs/t27400/283/1600620667/15106/a935e7bd/5be6f2e1Nfa8d9d6e.png', name: '路由器' },
+                        { img: '//img14.360buyimg.com/focus/s140x140_jfs/t27400/283/1600620667/15106/a935e7bd/5be6f2e1Nfa8d9d6e.png', name: '路由器' }
                     ]
                 },
                 {
-                    id: 10002,
+                    id: 100002,
                     title: '家电热搜',
                     items: [
-                        { img: '//img14.360buyimg.com/focus/s140x140_jfs/t27136/183/1628977274/31007/a6f7ed55/5be6ebd8Nb07ef492.png', name: '手机' },
-                        { img: '//img30.360buyimg.com/focus/s140x140_jfs/t1/21233/40/7634/13890/5c6d039bE8a65d667/aef9581abcc85725.png', name: '耳机' },
-                        { img: '//img30.360buyimg.com/focus/s140x140_jfs/t1/1446/14/631/8500/5b9237e5E0d1f9e16/b1a627b92323b5ed.png', name: '华为' },
-                        { img: '//img11.360buyimg.com/focus/s140x140_jfs/t1/26217/19/7605/22816/5c6d03a3E4f263c9d/d6fc27b51078358c.png', name: '电磁炉' },
-                        { img: '//img14.360buyimg.com/focus/s140x140_jfs/t27400/283/1600620667/15106/a935e7bd/5be6f2e1Nfa8d9d6e.png', name: '路由器' },
+                        { img: '//img20.360buyimg.com/focus/s140x140_jfs/t21115/83/225125274/13856/5473fb3f/5b0567c1N59d53b27.png', name: '冰箱' },
+                        { img: '//img14.360buyimg.com/focus/s140x140_jfs/t21664/15/237213959/24996/a3c6c7d6/5b0567c7N9cc1c355.png', name: '洗衣机' },
+                        { img: '//img12.360buyimg.com/focus/s140x140_jfs/t18106/218/2672347202/29951/3618e960/5b0567cdN275fbcdd.png', name: '电视' },
                     ]
                 }
             ]
-        }
+        },
+        {
+            id: 2,
+            title: '手机数码',
+            subcg: [
+                {
+                    id: 200001,
+                    title: '热门品牌',
+                    items: [
+                        { img: '//img30.360buyimg.com/focus/s140x140_jfs/t13411/188/926813276/3945/a4f47292/5a1692eeN105a64b4.png', name: '小米' },
+                        { img: '//img14.360buyimg.com/focus/s140x140_jfs/t11929/135/2372293765/1396/e103ec31/5a1692e2Nbea6e136.jpg', name: '华为' },
+                        { img: '//img10.360buyimg.com/focus/s140x140_jfs/t12178/348/911080073/4732/db0ad9c7/5a1692e2N6df7c609.jpg', name: '荣耀' },
+                        { img: '//img20.360buyimg.com/focus/s140x140_jfs/t13759/194/897734755/2493/1305d4c4/5a1692ebN8ae73077.jpg', name: 'iPhone' },
+                        { img: '//img11.360buyimg.com/focus/s140x140_jfs/t11014/359/2341377211/2777/1755c29c/5a169244Nff0179e0.png', name: 'vivo' }
+                    ]
+                },
+                {
+                    id: 200002,
+                    title: '手机通讯',
+                    items: [
+                        { img: '//img12.360buyimg.com/focus/s140x140_jfs/t11461/339/2354953633/8254/8c8c50d3/5a169217N5d1b842e.jpg', name: '老人机' },
+                        { img: '//img10.360buyimg.com/focus/s140x140_jfs/t11503/241/2246064496/4783/cea2850e/5a169216N0701c7f1.jpg', name: '手机' },
+                        { img: '//img30.360buyimg.com/focus/s140x140_jfs/t18955/187/1309277884/11517/fe100782/5ac48d27N3f5bb821.jpg', name: '全面屏手机' },
+                        { img: '//img11.360buyimg.com/focus/s140x140_jfs/t11470/45/2362968077/2689/fb36d9a0/5a169238Nc8f0882b.jpg', name: '游戏手机' },
+                        { img: '//img20.360buyimg.com/focus/s140x140_jfs/t12022/66/917351804/2257/7ddc58e5/5a169232Ndf76f53c.jpg', name: '拍照手机' },
+                        { img: '//img30.360buyimg.com/focus/s140x140_jfs/t13255/192/958298391/1687/5c7e3c53/5a169204Nd4aa27bb.jpg', name: '对讲机' },
+                    ]
+                },
+                {
+                    id: 200003,
+                    title: '运营商',
+                    items: [
+                        { img: '//img20.360buyimg.com/focus/s140x140_jfs/t13309/121/902275259/3700/e9f22529/5a168e83Nb1a35aac.png', name: '合约机' },
+                        { img: '//img10.360buyimg.com/focus/s140x140_jfs/t11515/106/2342900928/7913/5a606e3f/5a168e7eNdd5d0121.png', name: '选号卡' },
+                        { img: '//img20.360buyimg.com/focus/s140x140_jfs/t14146/201/916948302/5272/8ae80f8e/5a168e78N78b24a8e.jpg', name: '办套餐' },
+                        { img: '//img30.360buyimg.com/focus/s140x140_jfs/t15865/151/2284016087/10155/c4aaceec/5a9faa1fN03a4c9e1.jpg', name: '京东网厅' }
+                    ]
+                }
+            ]
+        },
+        {
+            id: 3,
+            title: '家用电器',
+            subcg: [
+                {
+                    id: 300001,
+                    title: '厨房小电',
+                    items: [
+                        { img: '//img30.360buyimg.com/focus/s140x140_jfs/t12559/262/969294499/3436/8c0ce9c9/5a17f1d2N8078d5e6.jpg', name: '电水壶/热水瓶' }
+                    ]
+                },
+            ]
+        },
+        {
+            id: 4,
+            title: '电脑办公',
+            subcg: [
+                {
+                    id: 300001,
+                    title: '热卖分类',
+                    items: [
+                        { img: '//img13.360buyimg.com/focus/s140x140_jfs/t11071/195/2462134264/9117/cd0688bf/5a17ba79N18b9f3d4.png', name: '轻薄本' }
+                    ]
+                },
+            ]
+        },
+        {
+            id: 5,
+            title: '汽车生活',
+            subcg: [
+                {
+                    id: 500001,
+                    title: '热卖分类',
+                    items: [
+                        { img: '//img13.360buyimg.com/focus/s140x140_jfs/t11071/195/2462134264/9117/cd0688bf/5a17ba79N18b9f3d4.png', name: '轻薄本' }
+                    ]
+                },
+            ]
+        },
+        {
+            id: 6,
+            title: '男装',
+            subcg: [
+                {
+                    id: 600001,
+                    title: '热卖分类',
+                    items: [
+                        { img: '//img13.360buyimg.com/focus/s140x140_jfs/t11071/195/2462134264/9117/cd0688bf/5a17ba79N18b9f3d4.png', name: '轻薄本' }
+                    ]
+                },
+            ]
+        },
+        {
+            id: 7,
+            title: '女装',
+            subcg: [
+                {
+                    id: 700001,
+                    title: '热卖分类',
+                    items: [
+                        { img: '//img13.360buyimg.com/focus/s140x140_jfs/t11071/195/2462134264/9117/cd0688bf/5a17ba79N18b9f3d4.png', name: '轻薄本' }
+                    ]
+                },
+            ]
+        },
+        {
+            id: 8,
+            title: '母婴童装',
+            subcg: [
+                {
+                    id: 800001,
+                    title: '热卖分类',
+                    items: [
+                        { img: '//img13.360buyimg.com/focus/s140x140_jfs/t11071/195/2462134264/9117/cd0688bf/5a17ba79N18b9f3d4.png', name: '轻薄本' }
+                    ]
+                },
+            ]
+        },
+        {
+            id: 9,
+            title: '图书音像',
+            subcg: [
+                {
+                    id: 900001,
+                    title: '热卖分类',
+                    items: [
+                        { img: '//img13.360buyimg.com/focus/s140x140_jfs/t11071/195/2462134264/9117/cd0688bf/5a17ba79N18b9f3d4.png', name: '轻薄本' }
+                    ]
+                },
+            ]
+        },
+        {
+            id: 10,
+            title: '酒水饮料',
+            subcg: [
+                {
+                    id: 1000001,
+                    title: '热卖分类',
+                    items: [
+                        { img: '//img13.360buyimg.com/focus/s140x140_jfs/t11071/195/2462134264/9117/cd0688bf/5a17ba79N18b9f3d4.png', name: '轻薄本' }
+                    ]
+                },
+            ]
+        },
+        {
+            id: 11,
+            title: '箱包手袋',
+            subcg: [
+                {
+                    id: 1100001,
+                    title: '热卖分类',
+                    items: [
+                        { img: '//img13.360buyimg.com/focus/s140x140_jfs/t11071/195/2462134264/9117/cd0688bf/5a17ba79N18b9f3d4.png', name: '轻薄本' }
+                    ]
+                },
+            ]
+        },
+        {
+            id: 12,
+            title: '宠物生活',
+            subcg: [
+                {
+                    id: 1200001,
+                    title: '热卖分类',
+                    items: [
+                        { img: '//img13.360buyimg.com/focus/s140x140_jfs/t11071/195/2462134264/9117/cd0688bf/5a17ba79N18b9f3d4.png', name: '轻薄本' }
+                    ]
+                },
+            ]
+        },
+        {
+            id: 13,
+            title: '京东国际',
+            subcg: [
+                {
+                    id: 1300001,
+                    title: '热卖分类',
+                    items: [
+                        { img: '//img13.360buyimg.com/focus/s140x140_jfs/t11071/195/2462134264/9117/cd0688bf/5a17ba79N18b9f3d4.png', name: '轻薄本' }
+                    ]
+                },
+            ]
+        },
+        {
+            id: 14,
+            title: '生活旅行',
+            subcg: [
+                {
+                    id: 1400001,
+                    title: '热卖分类',
+                    items: [
+                        { img: '//img13.360buyimg.com/focus/s140x140_jfs/t11071/195/2462134264/9117/cd0688bf/5a17ba79N18b9f3d4.png', name: '轻薄本' }
+                    ]
+                },
+            ]
+        },
+        {
+            id: 15,
+            title: '礼品鲜花',
+            subcg: [
+                {
+                    id: 1500001,
+                    title: '热卖分类',
+                    items: [
+                        { img: '//img13.360buyimg.com/focus/s140x140_jfs/t11071/195/2462134264/9117/cd0688bf/5a17ba79N18b9f3d4.png', name: '轻薄本' }
+                    ]
+                },
+            ]
+        },
     ]
 }
