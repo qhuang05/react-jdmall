@@ -7,16 +7,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.post('/user/login', (req, res)=>{
-    const {username} = req.body;
+    const {username, password} = req.body;
     if(username=='admin' || username=='test'){
         res.json({
             status: 1000,
+            code: 'success',
             msg: '登录成功',
             data: username
         })
     } else{
         res.json({
-            status: -1,
+            status: 1000,
+            code: 'fail',
             msg: '用户不存在'
         })
     }

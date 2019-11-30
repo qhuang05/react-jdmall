@@ -1,15 +1,20 @@
 import React, { Component } from 'react'
+import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
 import Layout from '../Layout'
 import {logout} from '../../actions/user'
 
 class UserPage extends Component {
+    _logout = async ()=>{
+        await this.props.logout();
+        return <Redirect to="/login" />
+    }
     render() {
-        let {user, logout} = this.props;
+        let {user} = this.props;
         return (
             <Layout>
                 UserPage, Hello {user.username}
-                <button onClick={logout}>退出</button>
+                <button onClick={this._logout}>退出</button>
             </Layout>
         )
     }
