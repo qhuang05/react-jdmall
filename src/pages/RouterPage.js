@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import HomePage from './Home';
 import CategoryPage from './Category';
+import ProductPage from './Product';
 import ScrollListPage from './List';
 import LoginPage from './Login';
 import ErrorPage from './Error';
@@ -16,6 +17,7 @@ export default class RouterPage extends Component {
                     <Switch>
                         <Route path="/" component={HomePage} exact />
                         <Route path="/category" component={CategoryPage} />
+                        <Route path="/Product" component={ProductPage} />
                         <Route path="/list" component={ScrollListPage} />
                         <Route path="/login" component={LoginPage} />
                         <PrivateRoute path="/user" component={UserPage} />

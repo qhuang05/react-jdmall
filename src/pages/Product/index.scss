@@ -1,13 +1,3 @@
-.list-fixed-header {
-    width     : 100%;
-    height    : 90px;
-    background: yellowgreen;
-    color     : #fff;
-    text-align: center;
-}
-
-
-
 .sticky-header {
     width  : 100%;
     top    : 0;
@@ -30,4 +20,12 @@
 .sticky-list .sticky-container .sticky {
     padding  : 7px 15px;
     transform: none;
+}
+
+.am-menu{
+    position: absolute;
+    top: 50px;
+    left:0;
+    width:100%;
+    z-index:10;
 }

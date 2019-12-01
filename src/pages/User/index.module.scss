@@ -1,0 +1,22 @@
+.user-info{
+    width: 100%;
+    background: linear-gradient(90deg, #eb3c3c, #ff7459);
+    padding: 20px;
+    color: #fff;
+    font-size: 16px;
+    position: relative;
+    img{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+    .text{
+        padding-left: 10px;
+    }
+    .logout{
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        cursor: pointer;
+    }
+}

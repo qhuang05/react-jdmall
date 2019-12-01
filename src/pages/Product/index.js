@@ -1,9 +1,24 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import Request from '@/utils/request';
+import { ListView, PullToRefresh, Menu } from 'antd-mobile';
+import SearchBar from '@/components/SearchBar'
 import './index.scss'
-import Request from '../../utils/request';
-import { ListView, PullToRefresh } from 'antd-mobile';
 
+const initData = [
+    {
+      value: '1',
+      label: 'Food',
+    }, {
+      value: '2',
+      label: 'Supermarket',
+    },
+    {
+      value: '3',
+      label: 'Extra',
+      isLeaf: true,
+    },
+  ];
 class ScrollListPage extends Component {
     constructor(props) {
         super(props);
@@ -18,6 +33,8 @@ class ScrollListPage extends Component {
             list: [],
             page: 1,
             pageSize: 20,
+            // 筛选条件
+            show: false,
         };
     }
     async getListData(page = 1, pageSize = this.state.pageSize) {
@@ -57,7 +74,7 @@ class ScrollListPage extends Component {
     }
     scrollHandler = (event) => {
         let listTop = ReactDOM.findDOMNode(this.lv).offsetTop;
-        let scrollTop = document.documentElement.scrollTop;
+        let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         if(scrollTop>listTop){
             ReactDOM.findDOMNode(this.fixedCont).style.position = 'fixed';
         } else{
@@ -66,6 +83,13 @@ class ScrollListPage extends Component {
     }
     componentDidMount() { 
         this.getListData();
+    }
+    handleClick = e => {
+        console.log('ccc')
+        this.setState({
+            show: !this.state.show
+        })
+        e.preventDefault();
     }
     render() {
         const renderRow = (rowData, sectionID, rowID) => {
@@ -84,9 +108,26 @@ class ScrollListPage extends Component {
                 </div>
             );
         };
+        const menuEl = (
+            <Menu
+              className="single-multi-foo-menu"
+              data={initData}
+              value={['1']}
+              level={1}
+            //   onChange={this.onChange}
+            //   onOk={this.onOk}
+            //   onCancel={this.onCancel}
+              height={document.documentElement.clientHeight * 0.6}
+              multiSelect
+            />
+          );
         return (
             <>
-                <div style={{ height: '100px' }}>content</div>
+                <SearchBar flag="category" />
+                <div style={{'position': 'relative'}}>
+                    <a onClick={this.handleClick} style={{padding: '20px', display:'inline-block'}}>综合</a>
+                    {this.state.show ? menuEl : null}
+                </div>
                 <div style={{ height: '40px', background: 'red' }} ref={el=>this.fixedCont=el} className="sticky-header">sticky content...</div>
                 <ListView
                     ref={el => this.lv = el}
