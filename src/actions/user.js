@@ -7,7 +7,7 @@ export const login = (username, password) => async (dispatch) => {
         url: '/user/login',
         data: {username, password}
     });
-    console.log('login', ret);
+    // console.log('login', ret);
     if(ret.code == 'success'){
         dispatch({ 
             type: 'LoginSuccess', 
