@@ -46,7 +46,7 @@ class LoginPage extends Component {
                 <>
                     <NavBar
                         mode="light"
-                        icon={<Icon type="left" />}
+                        icon={<Icon type="left" style={{color: '#333'}} />}
                         onLeftClick={() => window.history.back()}
                     >京东登录注册
                     </NavBar>
@@ -80,6 +80,9 @@ class LoginPage extends Component {
                                 <div className={styles['forgot-pwd']}>忘记密码</div>
                             </div>
                             <button className={styles['login-btn']} onClick={e=>login(username, password)}>登录</button>
+                        </div>
+                        <div className="tc" style={{marginTop: '20px'}}>
+                            测试账号：admin | test
                         </div>
                     </WingBlank>
                 </>

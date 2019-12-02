@@ -23,6 +23,7 @@ class CategoryPage extends Component {
 	// 初始化分类区域高度
 	initContHeight(){
 		let winHeight = document.documentElement.clientHeight || document.body.clientHeight,
+			// height1 = ReactDOM.findDOMNode()
 			height1 = document.querySelector('.search-bar').clientHeight,
 			height2 = document.querySelector('.tab-bar').clientHeight,
 			maxHeight = winHeight - height1 - height2;
@@ -71,7 +72,7 @@ class CategoryPage extends Component {
 		let { page } = this.state;
 		return (
 			<Layout>
-				<SearchBar flag="category" />
+				<SearchBar isHistory={true} flag="category" />
 				<div style={{height: this.state.tabsHeight, 'background': '#fff'}}>
 					<Tabs
 						tabs={category}
