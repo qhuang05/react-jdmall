@@ -38,7 +38,6 @@ export default class JDSearchBar extends Component {
                         />
                         <div style={{'paddingLeft': '10px'}}>
                             <Link to="/login" style={{color: '#fff'}}>登录</Link>
-                            {/* <a>登录</a> */}
                         </div>
                     </div>
                 </WingBlank>

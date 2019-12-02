@@ -90,7 +90,6 @@ class HomePage extends Component {
                         <li key={'s-' + i}>
                             <a>
                                 <LazyLoad throttle={200} height={200}>
-                                    {/* <img src={item.img} /> */}
                                     <Transition
                                         timeout={0}
                                         in={true}

@@ -50,6 +50,7 @@ class JDTabBar extends Component {
                                 <img className="nav-img" src="https://img11.360buyimg.com/jdphoto/s130x100_jfs/t1/48787/24/12910/3390/5d9c4b12Ee63270e4/4481f5b3dbad979d.png" />
                             </div>
                         }
+                        // onPress={}
                     >
                     </TabBar.Item>
                     <TabBar.Item
@@ -68,6 +69,7 @@ class JDTabBar extends Component {
                                 <img className="nav-img" src="https://img11.360buyimg.com/jdphoto/s130x100_jfs/t1/47480/36/12929/3209/5d9c4b13E97caa63a/4dc0ec8a7e47c2b7.png" />
                             </div>
                         }
+                        // onPress={}
                     >
                     </TabBar.Item>
                 </TabBar>

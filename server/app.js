@@ -62,6 +62,7 @@ app.get('/api/test', (req, res) => {
             break;
         case 'seckill':
             data = mockData.secondKills;
+            break;
         case 'category':
             data = mockData.categorys;
             break;
