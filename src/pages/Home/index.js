@@ -9,7 +9,10 @@ import LazyLoad from 'react-lazyload'
 import { Transition } from 'react-transition-group'
 import classnames from 'classnames'
 import styles from './index.module.scss'
+import Test from '@/components/Test.js'
+import {InjectUnmount} from '@/utils/injectUnmount.js'
 
+@InjectUnmount
 class HomePage extends Component {
     constructor(props) {
         super(props);
@@ -115,6 +118,11 @@ class HomePage extends Component {
         this.props.getMenuPanel();
         this.props.getSecondKills();
     }
+    // componentWillUnmount(){
+    //     this.setState = (state, callback) => {
+    //         return;
+    //     }
+    // }
     render() {
         return (
             <Layout curTab="index" isShowToolBar={true}>

@@ -4,7 +4,9 @@ import { connect } from 'react-redux'
 import { login } from '../../actions/user'
 import { NavBar, Icon, WingBlank } from 'antd-mobile'
 import styles from './index.module.scss'
+import {InjectUnmount} from '@/utils/injectUnmount.js'
 
+@InjectUnmount
 class LoginPage extends Component {
     constructor(props) {
         super(props);
@@ -27,6 +29,11 @@ class LoginPage extends Component {
             [key+'Clear']: value
         })
     }
+    // componentWillUnmount(){
+    //     this.setState = (state, callback) => {
+    //         return;
+    //     }
+    // }
     render() {
         let { user, login, location } = this.props;
         let { username, password, usernameClear, passwordClear } = this.state;

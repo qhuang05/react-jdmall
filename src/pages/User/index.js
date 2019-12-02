@@ -5,12 +5,19 @@ import {logout} from '@/actions/user'
 import Layout from '@/pages/Layout'
 import classnames from 'classnames'
 import styles from './index.module.scss'
+import {InjectUnmount} from '@/utils/injectUnmount.js'
 
+@InjectUnmount
 class UserPage extends Component {
     _logout = async ()=>{
         await this.props.logout();
         return <Redirect to="/login" />
     }
+    // componentWillUnmount(){
+    //     this.setState = (state, callback) => {
+    //         return;
+    //     }
+    // }
     render() {
         let {user} = this.props;
         let userInfo = localStorage.getItem('userInfo');

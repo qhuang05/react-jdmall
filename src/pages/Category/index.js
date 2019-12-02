@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 import { getCategory } from '@/actions/category'
 import Layout from '@/pages/Layout'
@@ -7,13 +8,15 @@ import { Tabs } from 'antd-mobile';
 import styles from './index.module.scss'
 import LazyLoad from 'react-lazyload'
 import { Transition } from 'react-transition-group'
+import {InjectUnmount} from '@/utils/injectUnmount.js'
 
+@InjectUnmount
 class CategoryPage extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			tabItemHeight: 46,
-			tabsHeight: '90vh', //tab总高度
+			tabsHeight: '100vh', //tab总高度
 			page: 1,	//tab标签可视个数
 		}
 	}
@@ -58,6 +61,11 @@ class CategoryPage extends Component {
 		await this.props.getCategory();
 		this.initContHeight();
 	}
+	// componentWillUnmount(){
+    //     this.setState = (state, callback) => {
+    //         return;
+    //     }
+    // }
 	render() {
 		let { category } = this.props.category;
 		let { page } = this.state;

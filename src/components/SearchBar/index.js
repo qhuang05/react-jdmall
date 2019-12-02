@@ -4,8 +4,10 @@ import classnames from 'classnames'
 import SvgIcon from '@/components/SvgIcon'
 import { SearchBar, WingBlank } from 'antd-mobile'
 import './index.scss'
+import {InjectUnmount} from '@/utils/injectUnmount.js'
 
-export default class JDSearchBar extends Component {
+@InjectUnmount
+class JDSearchBar extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -22,6 +24,9 @@ export default class JDSearchBar extends Component {
     }
     componentWillMount(){
         clearInterval(this.sTimer);
+        // this.setState = (state, callback) => {
+        //     return;
+        // }
     }
     render() {
         let {keywords, curIndex} = this.state;
@@ -37,7 +42,7 @@ export default class JDSearchBar extends Component {
                             placeholder={keywords[curIndex]}
                         />
                         <div style={{'paddingLeft': '10px'}}>
-                            <Link to="/login" style={{color: '#fff'}}>登录</Link>
+                            <Link to="/login">登录</Link>
                         </div>
                     </div>
                 </WingBlank>
@@ -45,3 +50,5 @@ export default class JDSearchBar extends Component {
         )
     }
 }
+
+export default JDSearchBar
