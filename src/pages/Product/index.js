@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import Request from '@/utils/request';
 import { ListView, PullToRefresh, Menu } from 'antd-mobile';
 import SearchBar from '@/components/SearchBar'
+import SelectFilter from '@/components/SelectFilter'
 import './index.scss'
 
 const initData = [
@@ -128,6 +129,7 @@ class ScrollListPage extends Component {
                     <a onClick={this.handleClick} style={{padding: '20px', display:'inline-block'}}>综合</a>
                     {this.state.show ? menuEl : null}
                 </div>
+                <SelectFilter />
                 <div style={{ height: '40px', background: 'red' }} ref={el=>this.fixedCont=el} className="sticky-header">sticky content...</div>
                 <ListView
                     ref={el => this.lv = el}
