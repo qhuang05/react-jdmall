@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import BottomMenu from '@/components/BottomMenu'
+import BottomMenu2 from '@/components/BottomMenu2'
 import ToolBar from '@/components/ToolBar';
 
 const menu = [{
@@ -33,8 +34,8 @@ class Layout extends Component {
             <div>
                 {_children.map((item,i)=>(<Fragment key={item+i}>{item}</Fragment>))}
                 {isShowBottom && <BottomMenu />}
+                {/* {isShowBottom && <BottomMenu2 menu={menu}/>} */}
                 {isShowToolBar && <ToolBar />}
-                {/* {isShowBottom && <BottomMenu2 menu={menu} />} */}
             </div>
         )
     }
