@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import classnames from 'classnames';
-import SvgIcon from '@/components/SvgIcon';
-import { SearchBar, WingBlank } from 'antd-mobile';
-import './index.scss';
+import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
+import classnames from 'classnames'
+import SvgIcon from '@/components/SvgIcon'
+import { SearchBar, WingBlank } from 'antd-mobile'
+import './index.scss'
 
 export default class JDSearchBar extends Component {
     constructor(props){
@@ -28,15 +29,16 @@ export default class JDSearchBar extends Component {
             <div className="search-bar" flag={this.props.flag}>
                 <WingBlank>
                     <div className={classnames('flex', 'flex-y-center')}>
-                        <div style={{'paddingRight': '10px'}}>
+                        <Link style={{'paddingRight': '10px'}} to="/category">
                             <SvgIcon iconClass="menu" size="18px" />
-                        </div>
+                        </Link>
                         <SearchBar 
                             className="flex-1" 
                             placeholder={keywords[curIndex]}
                         />
                         <div style={{'paddingLeft': '10px'}}>
-                            <a>登录</a>
+                            <Link to="/login" style={{color: '#fff'}}>登录</Link>
+                            {/* <a>登录</a> */}
                         </div>
                     </div>
                 </WingBlank>
