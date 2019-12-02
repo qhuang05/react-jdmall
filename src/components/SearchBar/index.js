@@ -36,16 +36,16 @@ class JDSearchBar extends Component {
                 <WingBlank>
                     <div className={classnames('flex', 'flex-y-center')}>
                         {isHistory ? 
-                            <Link style={{'paddingRight': '10px'}} onClick={()=>window.history.back()}>
+                            <a style={{'paddingRight': '10px'}} onClick={()=>window.history.back()}>
                                 <Icon type="left" />
-                            </Link> : <Link style={{'paddingRight': '10px'}} to="/category">
+                            </a> : <Link style={{'paddingRight': '10px'}} to="/category">
                                 <SvgIcon iconClass="menu" size="18px" />
                             </Link>}
                         <SearchBar 
                             className="flex-1" 
                             placeholder={keywords[curIndex]}
                         />
-                        <div style={{'paddingLeft': '10px'}}>
+                        <div style={{'paddingLeft': '10px', 'fontSize': '14px'}}>
                             <Link to="/login">登录</Link>
                         </div>
                     </div>
