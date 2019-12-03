@@ -39,7 +39,7 @@ class LoginPage extends Component {
         let { username, password, usernameClear, passwordClear } = this.state;
         if (user.isLogin) {
             return (
-                <Redirect to={location.state || '/userCenter'} />
+                <Redirect to={location.state || '/user'} />
             )
         } else {
             return (

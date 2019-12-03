@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import classnames from 'classnames'
 import SvgIcon from '@/components/SvgIcon'
@@ -31,6 +32,7 @@ class JDSearchBar extends Component {
     render() {
         let {isHistory} = this.props;
         let {keywords, curIndex} = this.state;
+        let user = localStorage.getItem('userInfo');
         return (
             <div className="search-bar" flag={this.props.flag}>
                 <WingBlank>
@@ -45,8 +47,8 @@ class JDSearchBar extends Component {
                             className="flex-1" 
                             placeholder={keywords[curIndex]}
                         />
-                        <div style={{'paddingLeft': '10px', 'fontSize': '14px'}}>
-                            <Link to="/login">登录</Link>
+                        <div style={{'paddingLeft': '10px', 'fontSize': '16px'}}>
+                            {user ? JSON.parse(user).username : <Link to="/login">登录</Link>}
                         </div>
                     </div>
                 </WingBlank>
@@ -55,4 +57,8 @@ class JDSearchBar extends Component {
     }
 }
 
-export default JDSearchBar
+export default connect(
+    state=>({
+        user: state.user
+    })
+)(JDSearchBar)
