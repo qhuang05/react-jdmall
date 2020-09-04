@@ -160,7 +160,7 @@
   "devDependencies": {
     "autoprefixer": "^9.7.1",
     "babel-plugin-import": "^1.12.2",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "postcss-pxtorem": "^4.0.1",
     "svg-sprite-loader": "^4.1.6"
   },
